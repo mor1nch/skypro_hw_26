@@ -19,6 +19,10 @@ class User(db.Model):
     password = db.Column(db.String(128))
 
 
+with app.app_context():
+    db.create_all()
+
+
 @app.route("/")
 def index():
     users = User.query.all()
@@ -46,3 +50,7 @@ def register():
         return jsonify({"error": "already_exists"}), 400
 
     return jsonify({"username": user.username}), 200
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
