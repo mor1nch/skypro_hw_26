@@ -2,7 +2,6 @@ from hashlib import md5
 
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from sqlalchemy.exc import IntegrityError
 
 app = Flask("app")
@@ -10,7 +9,6 @@ app.config.from_pyfile("default_config.py")
 app.config.from_envvar("APP_SETTINGS", silent=True)
 
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
 
 class User(db.Model):
