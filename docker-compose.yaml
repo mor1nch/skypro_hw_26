@@ -4,8 +4,9 @@ services:
   api:
     build:
       context: .
+    image: mor1nch/skypro_hw_26
     ports:
-      - 80:80
+      - "80:80"
     platform: linux/amd64
     volumes:
       - ./docker_config.py:/code/default_config.py
