@@ -10,7 +10,7 @@ app.config.from_envvar("APP_SETTINGS", silent=True)
 
 db = SQLAlchemy(app)
 
-
+# lexa sosi hui
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(128), unique=True)
